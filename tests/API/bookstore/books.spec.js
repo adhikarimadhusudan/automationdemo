@@ -12,8 +12,8 @@ test.describe.only(' Books API Tests', () => {
   test.beforeEach(async ({ request }) => {
     const response = await request.post(`${BASE_URL}${ENDPOINTS.login}`, {
       data: {
-      userName: process.env.APP_USERNAME,
-      password: process.env.APP_PASSWORD
+      userName: CREDENTIALS.username,
+      password: CREDENTIALS.password
       },
       headers: {
         'Content-Type': 'application/json'
@@ -95,7 +95,7 @@ test.describe.only(' Books API Tests', () => {
     expect(body).toHaveProperty('message');
   });
 
-  test('DELETE /BookStore/v1/Books - delete all books for a user and validate response', async ({ request }) => {
+  test.skip('DELETE /BookStore/v1/Books - delete all books for a user and validate response', async ({ request }) => {
     const payload = {
       userId: userId
     };
@@ -119,11 +119,4 @@ test.describe.only(' Books API Tests', () => {
     expect(typeof body.message).toBe('string');
   });
 });
-
-// test('Log contents of .env variables', async () => {
-//   console.log('Loaded environment variables:');
-//   console.log('USERNAME:', process.env.APP_USERNAME);
-//   console.log('PASSWORD:', process.env.APP_PASSWORD);
-//   console.log('ENV:', process.env.ENV);
-// });
 

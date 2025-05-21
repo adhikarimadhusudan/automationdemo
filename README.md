@@ -34,9 +34,23 @@ To get started with this project, follow these steps:
    ```bash
    npx playwright test
    ```
+# Configuring Playwright Tests
 
- Once the tests have finished running, a report will be generated.  
- You can view the report using the link that appears in the terminal after test execution is complete.
+   The tests execution can be configured based on the needs, This is done via 
+   - `playwright.config.js` 
+
+   At present, only chromium browser has been enabled. 
+   
+   To run tests on other browsers make change in `playwright.config.js`. 
+
+   Uncomment the json for the intended browser. For example to enable testing in Firefox uncomment: 
+
+   ```bash 
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // }
+    ```
 
 # File and Folder Structure
 
@@ -44,20 +58,22 @@ To get started with this project, follow these steps:
   This folder contains all test-related files.  
   - `tests/UI/`: Contains all UI test cases.  
   - `tests/API/`: Contains all API test cases.
+  tests files have `.spec.js` extensions
 
 - **helpers/**  
   Includes helper functions that are called by the test files.  
   Refer to the import section at the top of each test file to see which helpers are used.
+  tests files are  javascript files with`.js` extensions
 
 - **utils/**  
   Contains utility files that support the testing framework.
 
 - **util/constants.js**  
-  This file holds all the constant values that are repeatedly used throughout the tests.
-
+  This file holds all the constant values that are repeatedly used in the tests.
 
 # Programming Practice
 
-- Helper files are suffixed with `_helpers` (e.g., `login_helpers.js`)
-- File names use **snake_case** (e.g., `user_login_test.js`)
-- Environment files use **UPPERCASE** (e.g., `.ENV`)
+- Helper files are suffixed with `_helpers` (e.g., `table_helpers.js`)
+- File names use **snake_case** (e.g., `table_crud_spec.js`)
+- For variables and functions  in programs use lowerCamelCase (e.g.,`firstName` ).
+- For API test fiels use name of the endpoints as the name of the file (e.g., `books.spec.js`).

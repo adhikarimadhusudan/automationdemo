@@ -5,8 +5,8 @@ module.exports = {
     generateToken: '/Account/v1/GenerateToken',
     books: '/BookStore/v1/Books'
   },
-//   CREDENTIALS: {
-//     username: 'testerdemoer',
-//     password: 'Testerdemoer123#'
-//   }
+  CREDENTIALS: {
+    username: 'testerdemoer',
+    password: 'Testerdemoer123#'
+  }
 };
