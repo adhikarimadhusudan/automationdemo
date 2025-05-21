@@ -49,6 +49,7 @@ To get started with this project, follow these steps:
 # How to See the Test Results
 
    Once the tests are executed, playwright will share you a link to the report html or else you can hit the following command:
+
     ```bash 
    npx playwright show-report
    ```
@@ -56,11 +57,14 @@ To get started with this project, follow these steps:
 # Configuring Tests 
 
    The tests execution can be configured based on the needs, This is done on the file
+
    - `playwright.config.js` 
 
    At present, only chromium browser has been enabled. 
    
-   To run tests on other browsers make change in `playwright.config.js`. 
+   To run tests on other browsers make change in 
+   
+   `playwright.config.js`. 
 
    Uncomment the json for the intended browser. For example to enable testing in Firefox uncomment: 
 
