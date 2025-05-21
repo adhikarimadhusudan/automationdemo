@@ -11,7 +11,7 @@ To get started with this project, follow these steps:
 
    ```bash
    git clone https://github.com/adhikarimadhusudan/automationdemo.git
-   cd your-repo-name
+   cd automationdemo.git
    ```
 
 3. **Install the Project Dependencies**  
