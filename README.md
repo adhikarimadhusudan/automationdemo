@@ -10,7 +10,7 @@ To get started with this project, follow these steps:
    Clone this project to your local machine using Git:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/adhikarimadhusudan/automationdemo.git
    cd your-repo-name
    ```
 
@@ -27,6 +27,16 @@ To get started with this project, follow these steps:
    ```bash
    cp .env.example .env
    ```
+# How to Run the Tests
+
+   To execute the tests, run the following command:
+
+   ```bash
+   npx playwright test
+   ```
+
+ Once the tests have finished running, a report will be generated.  
+ You can view the report using the link that appears in the terminal after test execution is complete.
 
 # File and Folder Structure
 
@@ -45,16 +55,6 @@ To get started with this project, follow these steps:
 - **util/constants.js**  
   This file holds all the constant values that are repeatedly used throughout the tests.
 
-# How to Run the Tests
-
-To execute the tests, run the following command:
-
-```bash
-npx playwright test
-```
-
-Once the tests have finished running, a report will be generated.  
-You can view the report using the link that appears in the terminal after test execution is complete.
 
 # Programming Practice
 
