@@ -46,11 +46,11 @@ To get started with this project, follow these steps:
    Uncomment the json for the intended browser. For example to enable testing in Firefox uncomment: 
 
    ```bash 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // }
-    ```
+     {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+     } 
+   ```
 
 # File and Folder Structure
 
