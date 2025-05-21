@@ -76,12 +76,12 @@ To get started with this project, follow these steps:
   This folder contains all test-related files.  
   - `tests/UI/`: Contains all UI test cases.  
   - `tests/API/`: Contains all API test cases.
-  tests files have `.spec.js` extensions
+  - Tests files have `.spec.js` extensions
 
 - **helpers/**  
   Includes helper functions that are called by the test files.  
   Refer to the import section at the top of each test file to see which helpers are used.
-  tests files are  javascript files with`.js` extensions
+  - Tests files are  javascript files with`.js` extensions
 
 - **utils/**  
   Contains utility files that support the testing framework.
