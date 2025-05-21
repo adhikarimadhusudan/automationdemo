@@ -21,13 +21,13 @@ To get started with this project, follow these steps:
    npm install
    ```
 4. **Install Browsers**  
-   Once inside the project directory, run the following command to install all required dependencies:
+   Once inside the project directory, run the following command to install all required browsers:
 
    ```bash
    npx playwright install
      ```
-  This step is very important as without this it won't be able to run UI tests. 
-  You may see an error that browsers are not present while executing tests if you skipped this step
+  This step is very important, as without this, the project won't be able to run UI tests. 
+  You may encounter an error that browsers are not present while executing tests skipping this step
 
 5. **Setup Environment Configuration**  
    Copy the `.env.example` file and create your own `.env` file for environment-specific variables:
@@ -35,16 +35,23 @@ To get started with this project, follow these steps:
    ```bash
    cp .env.example .env
    ```
+   This is where the credentials are supposed to be stored. 
+   But due to execution issues, I've added credentials in `util/constants.js` for now so that test runs without hassle.
+   If you feel like changing the credentials to log into demoqa.com, you can change from `util/constants.js`.
 
 # How to Run the Tests
-
    To execute the tests, run the following command:
 
    ```bash
    npx playwright test
    
    ```
-# Configuring Playwright Tests
+# How to See the Test Results
+
+   Once the tests are executed, playwright will share you a link to the report html or else you can hit the following command: 
+    `npx playwright show-report`
+
+# Configuring Tests 
 
    The tests execution can be configured based on the needs, This is done via 
    - `playwright.config.js` 
