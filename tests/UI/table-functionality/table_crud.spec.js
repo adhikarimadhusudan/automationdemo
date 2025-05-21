@@ -1,12 +1,16 @@
 import { test, expect, } from '@playwright/test';
 //Calling the helper functions for CRUD operations in the form
 const { createNewRecord, deleteRecord, editAndVerify, viewRecord } = require('../../../helpers/table_helpers');
+const { BASE_URL, ENDPOINTS} = require('../../../utils/constants');
 
 //Here Begins the tests for the CRUD operations for the table
+test.describe('CRUD Operations in Table', () => {
+
+test.beforeEach(async ({ page }) => {
+  await page.goto(`${BASE_URL}${ENDPOINTS.webTables}`); 
+}); 
 
 test('Creation of new record in the table and verify it', async ({ page }) => {
-  await page.goto('https://demoqa.com/webtables');
-
   const testData = {
     fields: {
       '#firstName': 'testFirstName',
@@ -29,9 +33,8 @@ test('Creation of new record in the table and verify it', async ({ page }) => {
 });
 
 test('View a record in the table and verify its values', async ({ page }) => {
-  await page.goto('https://demoqa.com/webtables');
 
-  // Assuming "Alden" is a unique row identifier
+// Taking "Alden" as a unique row identifier
   const expectedValues = [
     'Alden',
     'Cantrell',
@@ -45,15 +48,13 @@ test('View a record in the table and verify its values', async ({ page }) => {
 });
 
 test('Deleting a record in the table', async ({ page }) => {
-  await page.goto('https://demoqa.com/webtables');
-
+  
   // Use the helper to delete the row with "Alden"
   await deleteRecord(page, 'Alden');
 });
 
 test('Editing of a record in the table', async ({ page }) => {
-  await page.goto('https://demoqa.com/webtables');
-
+  
   //utilize the editAndVerify helper function to edit and verify values in a particular cell
   //it takes in existing values, the locator for the cell to be edited, the new value to be put in place, and the value used to verify which is basically the newly added value itself
   await editAndVerify(page, 'Alden', '#firstName', 'Alex', 'Alex');  // edit and verify by changing Alden to Alex in firstname cell
@@ -62,4 +63,4 @@ test('Editing of a record in the table', async ({ page }) => {
 
   await editAndVerify(page, 'Cierra', '#firstName', 'Fierra', 'Fierra'); //edit name of Cierra and verify the changes. 
 }); 
-
+});

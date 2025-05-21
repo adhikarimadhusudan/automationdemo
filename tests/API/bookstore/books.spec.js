@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
 const { BASE_URL, ENDPOINTS, CREDENTIALS } = require('../../../utils/constants');
 
 
-test.describe.only(' Books API Tests', () => {
+test.describe(' Books API Tests', () => {
   let token;
   let userId;
 
@@ -80,7 +80,7 @@ test.describe.only(' Books API Tests', () => {
       ]
     };
 
-    const response = await request.post('https://demoqa.com/BookStore/v1/Books', {
+    const response = await request.post(`${BASE_URL}${ENDPOINTS.books}`, {
       data: payload,
       headers: {
         'Content-Type': 'application/json'
@@ -108,7 +108,7 @@ test.describe.only(' Books API Tests', () => {
       }
     });
 
-    expect(response.status()).toBe(200); // Updated based on API behavior
+    expect(response.status()).toBe(200); 
 
     const body = await response.json();
     console.log('Delete response:', body);

@@ -20,19 +20,29 @@ To get started with this project, follow these steps:
    ```bash
    npm install
    ```
+4. **Install Browsers**  
+   Once inside the project directory, run the following command to install all required dependencies:
 
-4. **Setup Environment Configuration**  
+   ```bash
+   npx playwright install
+     ```
+  This step is very important as without this it won't be able to run UI tests. 
+  You may see an error that browsers are not present while executing tests if you skipped this step
+
+5. **Setup Environment Configuration**  
    Copy the `.env.example` file and create your own `.env` file for environment-specific variables:
 
    ```bash
    cp .env.example .env
    ```
+
 # How to Run the Tests
 
    To execute the tests, run the following command:
 
    ```bash
    npx playwright test
+   
    ```
 # Configuring Playwright Tests
 
