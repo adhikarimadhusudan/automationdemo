@@ -23,3 +23,27 @@ await expect(page.locator('div.rt-td:has-text("testEmail@example.com")')).toBeVi
 await expect(page.locator('div.rt-td:has-text("50000")')).toBeVisible();
 await expect(page.locator('div.rt-td:has-text("testDepartment")')).toBeVisible();
 });
+
+test('Deletion of a record in the table', async ({ page }) => {
+  await page.goto('https://demoqa.com/webtables');
+
+  //Click the delete SVG within the row which has Kierra as FirstName
+await page.locator('.rt-tr-group', { hasText: 'Alden' })
+          .locator('[title="Delete"] svg')
+          .click();
+  //Test code to check if the element id deleted and this fails
+//  await expect(page.locator('div.rt-td:has-text("Kierra")')).toBeVisible();
+ await expect(page.locator('div.rt-td:has-text("Alden")')).not.toBeVisible();
+});
+
+test('Deletion of a record in the table', async ({ page }) => {
+  await page.goto('https://demoqa.com/webtables');
+
+  //Click the delete SVG within the row which has Kierra as FirstName
+await page.locator('.rt-tr-group', { hasText: 'Alden' })
+          .locator('[title="Delete"] svg')
+          .click();
+  //Test code to check if the element id deleted and this fails
+//  await expect(page.locator('div.rt-td:has-text("Kierra")')).toBeVisible();
+ await expect(page.locator('div.rt-td:has-text("Alden")')).not.toBeVisible();
+});
