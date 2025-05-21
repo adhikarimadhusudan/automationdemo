@@ -41,18 +41,17 @@ To get started with this project, follow these steps:
 
 # How to Run the Tests
    To execute the tests, run the following command:
-
-   ```bash
+   
+  ```bash
    npx playwright test
    
  ```
 # How to See the Test Results
 
    Once the tests are executed, playwright will share you a link to the report html or else you can hit the following command:
-
-    ```bash 
-   npx playwright show-report
-   ```
+ 
+    npx playwright show-report
+    
 # Configuring Tests 
 
    The tests execution can be configured based on the needs, This is done on the file
