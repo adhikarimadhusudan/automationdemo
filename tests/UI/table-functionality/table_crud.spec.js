@@ -1,10 +1,6 @@
 import { test, expect, } from '@playwright/test';
 //Calling the helper functions for CRUD operations in the form
-// const { editAndVerify } = require('../../helpers/edit_helpers');
-// const { createNewRecord } = require('../../helpers/create_new_record_helpers');
-// const { deleteRecord } = require('../../helpers/delete_row_helpers');
-// const { viewRecord } = require('../../helpers/view_record_helpers');
-const { createNewRecord, deleteRecord, editAndVerify, viewRecord } = require('../../helpers/table_helpers');
+const { createNewRecord, deleteRecord, editAndVerify, viewRecord } = require('../../../helpers/table_helpers');
 
 //Here Begins the tests for the CRUD operations for the table
 
